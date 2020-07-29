@@ -34,7 +34,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: foo
+        name: updatesite
         path: releng-updatesite/target/repository/
   
     - name: Checkout
@@ -47,7 +47,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v2
       with:
-        name: foo
+        name: updatesite
         path: updatesite/
 
     - name: Commit
