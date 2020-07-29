@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <bundle id="edu.kit.praktomat">
+      <category name="edu.kit.praktomat"/>
+   </bundle>
+   <category-def name="edu.kit.praktomat" label="Praktomat"/>
+</site>

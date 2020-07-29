@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         name="Cleanup Praktomat Imports"
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="edu.kit.praktomat.CleanupHandler"
+            id="praktomat.command.cleanup"
+            name="Cleanup Praktomat Imports">
+      </command>
+      <command
+            defaultHandler="edu.kit.praktomat.TerminalHandler"
+            id="praktomat.command.terminal"
+            name="Fix missing Terminal.java">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="Praktomat">
+            <command
+                  commandId="praktomat.command.cleanup"
+                  label="Cleanup Praktomat Imports"
+                  style="push"
+                  tooltip="Cleanup selected Projects.">
+            </command>
+            <command
+                  commandId="praktomat.command.terminal"
+                  label="Fix missing Terminal.java"
+                  style="push"
+                  tooltip="Add missing Terminal.java to selected projects.">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="praktomat.category"
+            class="edu.kit.praktomat.PraktomatView"
+            id="praktomat.view"
+            name="Praktomat Helper"
+            restorable="true">
+      </view>
+      <category
+            id="praktomat.category"
+            name="Praktomat">
+      </category>
+   </extension>
+
+</plugin>
