@@ -18,6 +18,9 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import edu.kit.praktomat.util.PathUtil;
 import edu.kit.praktomat.util.WorkbenchWindowUtil;
 
+import org.apache.commons.math3.linear.RealMatrix;
+import org.apache.commons.math3.linear.MatrixUtils;
+
 public class TerminalHandler extends AbstractHandler {
 	private static final Path PROJECT_SOLUTION_PATH = Paths.get("solution");
 	private static final Path PACKAGE_PATH = Paths.get("edu", "kit", "informatik");
@@ -34,10 +37,20 @@ public class TerminalHandler extends AbstractHandler {
 		}
 
 		projects.stream().forEach(this::fixTerminal);
+		
+		double[][] matrixData = { {1d,2d,3d}, {2d,5d,3d}};
+		RealMatrix m = MatrixUtils.createRealMatrix(matrixData);
+		Alert.error("" + m.getRowDimension());
+		
 		return null;
 	}
 
 	private void fixTerminal(final IProject project) {
+		
+
+
+		
+		
 		final Path projectPath = PathUtil.toPath(project.getLocation());
 		final Path solutionPath = projectPath.resolve(PROJECT_SOLUTION_PATH);
 
