@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="edu.kit.ipd.sdq.praktomat.feature"
+      label="%featureName"
+      version="1.0.0.qualifier"
+      provider-name="%providerName">
+
+   <description>
+      %description
+   </description>
+
+   <copyright url="%copyrightURL">
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+   
+   <!--
+   <requires>
+      <import plugin="org.apache.commons.math3"/>
+   </requires>
+   -->
+   
+   <includes
+         id="org.apache.commons.math3.feature"
+         version="0.0.0"/>
+   
+   <!--
+   <plugin
+         id="thirdparty"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+   -->
+   <plugin
+         id="edu.kit.ipd.sdq.praktomat"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+
+
+</feature>

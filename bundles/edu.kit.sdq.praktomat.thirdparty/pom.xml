@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+    <groupId>edu.kit.praktomat</groupId>	
+	<version>1.0.0-SNAPSHOT</version>
+	<artifactId>thirdparty</artifactId>
+    <packaging>pom</packaging>
+
+	<properties>
+		<org.apache.commons_commons-math3.version>3.6.1</org.apache.commons_commons-math3.version>
+		<org.apache.commons_commons-csv.version>1.4</org.apache.commons_commons-csv.version>
+		<org.apache.commons_commons-collections4.version>4.3</org.apache.commons_commons-collections4.version>
+		<org.jgrapht_jgrapht-core.version>1.3.0</org.jgrapht_jgrapht-core.version>
+		<org.jgrapht_jgrapht-io.version>${org.jgrapht_jgrapht-core.version}</org.jgrapht_jgrapht-io.version>
+		<org.jscience_jscience.version>4.3.1</org.jscience_jscience.version>
+		<org.eclipse.ecf_ch.ethz.iks.r_osgi.remote.version>1.0.9</org.eclipse.ecf_ch.ethz.iks.r_osgi.remote.version>
+		<ca.umontreal.iro.simul_ssj.version>3.3.1</ca.umontreal.iro.simul_ssj.version>
+		<org.apache.chemistry.opencmis.version>0.12.0</org.apache.chemistry.opencmis.version>
+		<org.jmockit_jmockit.version>1.49</org.jmockit_jmockit.version>
+				<license.apache20>							Apache License${line.separator}
+					   Version 2.0, January 2004${line.separator}
+					http://www.apache.org/licenses/${line.separator}
+${line.separator}
+TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION${line.separator}
+${line.separator}
+1. Definitions.${line.separator}
+${line.separator}
+  "License" shall mean the terms and conditions for use, reproduction,${line.separator}
+  and distribution as defined by Sections 1 through 9 of this document.${line.separator}
+${line.separator}
+  "Licensor" shall mean the copyright owner or entity authorized by${line.separator}
+  the copyright owner that is granting the License.${line.separator}
+${line.separator}
+  "Legal Entity" shall mean the union of the acting entity and all${line.separator}
+  other entities that control, are controlled by, or are under common${line.separator}
+  control with that entity. For the purposes of this definition,${line.separator}
+  "control" means (i) the power, direct or indirect, to cause the${line.separator}
+  direction or management of such entity, whether by contract or${line.separator}
+  otherwise, or (ii) ownership of fifty percent (50%) or more of the${line.separator}
+  outstanding shares, or (iii) beneficial ownership of such entity.${line.separator}
+${line.separator}
+  "You" (or "Your") shall mean an individual or Legal Entity${line.separator}
+  exercising permissions granted by this License.${line.separator}
+${line.separator}
+  "Source" form shall mean the preferred form for making modifications,${line.separator}
+  including but not limited to software source code, documentation${line.separator}
+  source, and configuration files.${line.separator}
+${line.separator}
+  "Object" form shall mean any form resulting from mechanical${line.separator}
+  transformation or translation of a Source form, including but${line.separator}
+  not limited to compiled object code, generated documentation,${line.separator}
+  and conversions to other media types.${line.separator}
+${line.separator}
+  "Work" shall mean the work of authorship, whether in Source or${line.separator}
+  Object form, made available under the License, as indicated by a${line.separator}
+  copyright notice that is included in or attached to the work${line.separator}
+  (an example is provided in the Appendix below).${line.separator}
+${line.separator}
+  "Derivative Works" shall mean any work, whether in Source or Object${line.separator}
+  form, that is based on (or derived from) the Work and for which the${line.separator}
+  editorial revisions, annotations, elaborations, or other modifications${line.separator}
+  represent, as a whole, an original work of authorship. For the purposes${line.separator}
+  of this License, Derivative Works shall not include works that remain${line.separator}
+  separable from, or merely link (or bind by name) to the interfaces of,${line.separator}
+  the Work and Derivative Works thereof.${line.separator}
+${line.separator}
+  "Contribution" shall mean any work of authorship, including${line.separator}
+  the original version of the Work and any modifications or additions${line.separator}
+  to that Work or Derivative Works thereof, that is intentionally${line.separator}
+  submitted to Licensor for inclusion in the Work by the copyright owner${line.separator}
+  or by an individual or Legal Entity authorized to submit on behalf of${line.separator}
+  the copyright owner. For the purposes of this definition, "submitted"${line.separator}
+  means any form of electronic, verbal, or written communication sent${line.separator}
+  to the Licensor or its representatives, including but not limited to${line.separator}
+  communication on electronic mailing lists, source code control systems,${line.separator}
+  and issue tracking systems that are managed by, or on behalf of, the${line.separator}
+  Licensor for the purpose of discussing and improving the Work, but${line.separator}
+  excluding communication that is conspicuously marked or otherwise${line.separator}
+  designated in writing by the copyright owner as "Not a Contribution."${line.separator}
+${line.separator}
+  "Contributor" shall mean Licensor and any individual or Legal Entity${line.separator}
+  on behalf of whom a Contribution has been received by Licensor and${line.separator}
+  subsequently incorporated within the Work.${line.separator}
+${line.separator}
+2. Grant of Copyright License. Subject to the terms and conditions of${line.separator}
+  this License, each Contributor hereby grants to You a perpetual,${line.separator}
+  worldwide, non-exclusive, no-charge, royalty-free, irrevocable${line.separator}
+  copyright license to reproduce, prepare Derivative Works of,${line.separator}
+  publicly display, publicly perform, sublicense, and distribute the${line.separator}
+  Work and such Derivative Works in Source or Object form.${line.separator}
+${line.separator}
+3. Grant of Patent License. Subject to the terms and conditions of${line.separator}
+  this License, each Contributor hereby grants to You a perpetual,${line.separator}
+  worldwide, non-exclusive, no-charge, royalty-free, irrevocable${line.separator}
+  (except as stated in this section) patent license to make, have made,${line.separator}
+  use, offer to sell, sell, import, and otherwise transfer the Work,${line.separator}
+  where such license applies only to those patent claims licensable${line.separator}
+  by such Contributor that are necessarily infringed by their${line.separator}
+  Contribution(s) alone or by combination of their Contribution(s)${line.separator}
+  with the Work to which such Contribution(s) was submitted. If You${line.separator}
+  institute patent litigation against any entity (including a${line.separator}
+  cross-claim or counterclaim in a lawsuit) alleging that the Work${line.separator}
+  or a Contribution incorporated within the Work constitutes direct${line.separator}
+  or contributory patent infringement, then any patent licenses${line.separator}
+  granted to You under this License for that Work shall terminate${line.separator}
+  as of the date such litigation is filed.${line.separator}
+${line.separator}
+4. Redistribution. You may reproduce and distribute copies of the${line.separator}
+  Work or Derivative Works thereof in any medium, with or without${line.separator}
+  modifications, and in Source or Object form, provided that You${line.separator}
+  meet the following conditions:${line.separator}
+${line.separator}
+  (a) You must give any other recipients of the Work or${line.separator}
+	  Derivative Works a copy of this License; and${line.separator}
+${line.separator}
+  (b) You must cause any modified files to carry prominent notices${line.separator}
+	  stating that You changed the files; and${line.separator}
+${line.separator}
+  (c) You must retain, in the Source form of any Derivative Works${line.separator}
+	  that You distribute, all copyright, patent, trademark, and${line.separator}
+	  attribution notices from the Source form of the Work,${line.separator}
+	  excluding those notices that do not pertain to any part of${line.separator}
+	  the Derivative Works; and${line.separator}
+${line.separator}
+  (d) If the Work includes a "NOTICE" text file as part of its${line.separator}
+	  distribution, then any Derivative Works that You distribute must${line.separator}
+	  include a readable copy of the attribution notices contained${line.separator}
+	  within such NOTICE file, excluding those notices that do not${line.separator}
+	  pertain to any part of the Derivative Works, in at least one${line.separator}
+	  of the following places: within a NOTICE text file distributed${line.separator}
+	  as part of the Derivative Works; within the Source form or${line.separator}
+	  documentation, if provided along with the Derivative Works; or,${line.separator}
+	  within a display generated by the Derivative Works, if and${line.separator}
+	  wherever such third-party notices normally appear. The contents${line.separator}
+	  of the NOTICE file are for informational purposes only and${line.separator}
+	  do not modify the License. You may add Your own attribution${line.separator}
+	  notices within Derivative Works that You distribute, alongside${line.separator}
+	  or as an addendum to the NOTICE text from the Work, provided${line.separator}
+	  that such additional attribution notices cannot be construed${line.separator}
+	  as modifying the License.${line.separator}
+${line.separator}
+  You may add Your own copyright statement to Your modifications and${line.separator}
+  may provide additional or different license terms and conditions${line.separator}
+  for use, reproduction, or distribution of Your modifications, or${line.separator}
+  for any such Derivative Works as a whole, provided Your use,${line.separator}
+  reproduction, and distribution of the Work otherwise complies with${line.separator}
+  the conditions stated in this License.${line.separator}
+${line.separator}
+5. Submission of Contributions. Unless You explicitly state otherwise,${line.separator}
+  any Contribution intentionally submitted for inclusion in the Work${line.separator}
+  by You to the Licensor shall be under the terms and conditions of${line.separator}
+  this License, without any additional terms or conditions.${line.separator}
+  Notwithstanding the above, nothing herein shall supersede or modify${line.separator}
+  the terms of any separate license agreement you may have executed${line.separator}
+  with Licensor regarding such Contributions.${line.separator}
+${line.separator}
+6. Trademarks. This License does not grant permission to use the trade${line.separator}
+  names, trademarks, service marks, or product names of the Licensor,${line.separator}
+  except as required for reasonable and customary use in describing the${line.separator}
+  origin of the Work and reproducing the content of the NOTICE file.${line.separator}
+${line.separator}
+7. Disclaimer of Warranty. Unless required by applicable law or${line.separator}
+  agreed to in writing, Licensor provides the Work (and each${line.separator}
+  Contributor provides its Contributions) on an "AS IS" BASIS,${line.separator}
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or${line.separator}
+  implied, including, without limitation, any warranties or conditions${line.separator}
+  of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A${line.separator}
+  PARTICULAR PURPOSE. You are solely responsible for determining the${line.separator}
+  appropriateness of using or redistributing the Work and assume any${line.separator}
+  risks associated with Your exercise of permissions under this License.${line.separator}
+${line.separator}
+8. Limitation of Liability. In no event and under no legal theory,${line.separator}
+  whether in tort (including negligence), contract, or otherwise,${line.separator}
+  unless required by applicable law (such as deliberate and grossly${line.separator}
+  negligent acts) or agreed to in writing, shall any Contributor be${line.separator}
+  liable to You for damages, including any direct, indirect, special,${line.separator}
+  incidental, or consequential damages of any character arising as a${line.separator}
+  result of this License or out of the use or inability to use the${line.separator}
+  Work (including but not limited to damages for loss of goodwill,${line.separator}
+  work stoppage, computer failure or malfunction, or any and all${line.separator}
+  other commercial damages or losses), even if such Contributor${line.separator}
+  has been advised of the possibility of such damages.${line.separator}
+${line.separator}
+9. Accepting Warranty or Additional Liability. While redistributing${line.separator}
+  the Work or Derivative Works thereof, You may choose to offer,${line.separator}
+  and charge a fee for, acceptance of support, warranty, indemnity,${line.separator}
+  or other liability obligations and/or rights consistent with this${line.separator}
+  License. However, in accepting such obligations, You may act only${line.separator}
+  on Your own behalf and on Your sole responsibility, not on behalf${line.separator}
+  of any other Contributor, and only if You agree to indemnify,${line.separator}
+  defend, and hold each Contributor harmless for any liability${line.separator}
+  incurred by, or claims asserted against, such Contributor by reason${line.separator}
+  of your accepting any such warranty or additional liability.${line.separator}
+${line.separator}
+END OF TERMS AND CONDITIONS${line.separator}
+${line.separator}
+APPENDIX: How to apply the Apache License to your work.${line.separator}
+${line.separator}
+  To apply the Apache License to your work, attach the following${line.separator}
+  boilerplate notice, with the fields enclosed by brackets "[]"${line.separator}
+  replaced with your own identifying information. (Don't include${line.separator}
+  the brackets!)  The text should be enclosed in the appropriate${line.separator}
+  comment syntax for the file format. We also recommend that a${line.separator}
+  file or class name and description of purpose be included on the${line.separator}
+  same "printed page" as the copyright notice for easier${line.separator}
+  identification within third-party archives.${line.separator}
+${line.separator}
+Copyright [yyyy] [name of copyright owner]${line.separator}
+${line.separator}
+Licensed under the Apache License, Version 2.0 (the "License");${line.separator}
+you may not use this file except in compliance with the License.${line.separator}
+You may obtain a copy of the License at${line.separator}
+${line.separator}
+   http://www.apache.org/licenses/LICENSE-2.0${line.separator}
+${line.separator}
+Unless required by applicable law or agreed to in writing, software${line.separator}
+distributed under the License is distributed on an "AS IS" BASIS,${line.separator}
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.${line.separator}
+See the License for the specific language governing permissions and${line.separator}
+limitations under the License.</license.apache20>
+<license.additions.apache.commons.math3>${line.separator}
+Apache Commons Math includes the following code provided to the ASF under the${line.separator}
+Apache License 2.0:${line.separator}
+${line.separator}
+ - The inverse error function implementation in the Erf class is based on CUDA${line.separator}
+   code developed by Mike Giles, Oxford-Man Institute of Quantitative Finance,${line.separator}
+   and published in GPU Computing Gems, volume 2, 2010 (grant received on${line.separator}
+   March 23th 2013)${line.separator}
+ - The LinearConstraint, LinearObjectiveFunction, LinearOptimizer,${line.separator}
+   RelationShip, SimplexSolver and SimplexTableau classes in package${line.separator}
+   org.apache.commons.math3.optimization.linear include software developed by${line.separator}
+   Benjamin McCann (http://www.benmccann.com) and distributed with${line.separator}
+   the following copyright: Copyright 2009 Google Inc. (grant received on${line.separator}
+   March 16th 2009)${line.separator}
+ - The class "org.apache.commons.math3.exception.util.LocalizedFormatsTest" which${line.separator}
+   is an adapted version of "OrekitMessagesTest" test class for the Orekit library${line.separator}
+ - The "org.apache.commons.math3.analysis.interpolation.HermiteInterpolator"${line.separator}
+   has been imported from the Orekit space flight dynamics library.${line.separator}
+${line.separator}
+===============================================================================${line.separator}
+ ${line.separator}
+${line.separator}
+${line.separator}
+APACHE COMMONS MATH DERIVATIVE WORKS: ${line.separator}
+${line.separator}
+The Apache commons-math library includes a number of subcomponents${line.separator}
+whose implementation is derived from original sources written${line.separator}
+in C or Fortran.  License terms of the original sources${line.separator}
+are reproduced below.${line.separator}
+${line.separator}
+===============================================================================${line.separator}
+For the lmder, lmpar and qrsolv Fortran routine from minpack and translated in${line.separator}
+the LevenbergMarquardtOptimizer class in package${line.separator}
+org.apache.commons.math3.optimization.general ${line.separator}
+Original source copyright and license statement:${line.separator}
+${line.separator}
+Minpack Copyright Notice (1999) University of Chicago.  All rights reserved${line.separator}
+${line.separator}
+Redistribution and use in source and binary forms, with or${line.separator}
+without modification, are permitted provided that the${line.separator}
+following conditions are met:${line.separator}
+${line.separator}
+1. Redistributions of source code must retain the above${line.separator}
+copyright notice, this list of conditions and the following${line.separator}
+disclaimer.${line.separator}
+${line.separator}
+2. Redistributions in binary form must reproduce the above${line.separator}
+copyright notice, this list of conditions and the following${line.separator}
+disclaimer in the documentation and/or other materials${line.separator}
+provided with the distribution.${line.separator}
+${line.separator}
+3. The end-user documentation included with the${line.separator}
+redistribution, if any, must include the following${line.separator}
+acknowledgment:${line.separator}
+${line.separator}
+   "This product includes software developed by the${line.separator}
+   University of Chicago, as Operator of Argonne National${line.separator}
+   Laboratory.${line.separator}
+${line.separator}
+Alternately, this acknowledgment may appear in the software${line.separator}
+itself, if and wherever such third-party acknowledgments${line.separator}
+normally appear.${line.separator}
+${line.separator}
+4. WARRANTY DISCLAIMER. THE SOFTWARE IS SUPPLIED "AS IS"${line.separator}
+WITHOUT WARRANTY OF ANY KIND. THE COPYRIGHT HOLDER, THE${line.separator}
+UNITED STATES, THE UNITED STATES DEPARTMENT OF ENERGY, AND${line.separator}
+THEIR EMPLOYEES: (1) DISCLAIM ANY WARRANTIES, EXPRESS OR${line.separator}
+IMPLIED, INCLUDING BUT NOT LIMITED TO ANY IMPLIED WARRANTIES${line.separator}
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE${line.separator}
+OR NON-INFRINGEMENT, (2) DO NOT ASSUME ANY LEGAL LIABILITY${line.separator}
+OR RESPONSIBILITY FOR THE ACCURACY, COMPLETENESS, OR${line.separator}
+USEFULNESS OF THE SOFTWARE, (3) DO NOT REPRESENT THAT USE OF${line.separator}
+THE SOFTWARE WOULD NOT INFRINGE PRIVATELY OWNED RIGHTS, (4)${line.separator}
+DO NOT WARRANT THAT THE SOFTWARE WILL FUNCTION${line.separator}
+UNINTERRUPTED, THAT IT IS ERROR-FREE OR THAT ANY ERRORS WILL${line.separator}
+BE CORRECTED.${line.separator}
+${line.separator}
+5. LIMITATION OF LIABILITY. IN NO EVENT WILL THE COPYRIGHT${line.separator}
+HOLDER, THE UNITED STATES, THE UNITED STATES DEPARTMENT OF${line.separator}
+ENERGY, OR THEIR EMPLOYEES: BE LIABLE FOR ANY INDIRECT,${line.separator}
+INCIDENTAL, CONSEQUENTIAL, SPECIAL OR PUNITIVE DAMAGES OF${line.separator}
+ANY KIND OR NATURE, INCLUDING BUT NOT LIMITED TO LOSS OF${line.separator}
+PROFITS OR LOSS OF DATA, FOR ANY REASON WHATSOEVER, WHETHER${line.separator}
+SUCH LIABILITY IS ASSERTED ON THE BASIS OF CONTRACT, TORT${line.separator}
+(INCLUDING NEGLIGENCE OR STRICT LIABILITY), OR OTHERWISE,${line.separator}
+EVEN IF ANY OF SAID PARTIES HAS BEEN WARNED OF THE${line.separator}
+POSSIBILITY OF SUCH LOSS OR DAMAGES.${line.separator}
+===============================================================================${line.separator}
+${line.separator}
+Copyright and license statement for the odex Fortran routine developed by${line.separator}
+E. Hairer and G. Wanner and translated in GraggBulirschStoerIntegrator class${line.separator}
+in package org.apache.commons.math3.ode.nonstiff:${line.separator}
+${line.separator}
+${line.separator}
+Copyright (c) 2004, Ernst Hairer${line.separator}
+${line.separator}
+Redistribution and use in source and binary forms, with or without ${line.separator}
+modification, are permitted provided that the following conditions are ${line.separator}
+met:${line.separator}
+${line.separator}
+- Redistributions of source code must retain the above copyright ${line.separator}
+notice, this list of conditions and the following disclaimer.${line.separator}
+${line.separator}
+- Redistributions in binary form must reproduce the above copyright ${line.separator}
+notice, this list of conditions and the following disclaimer in the ${line.separator}
+documentation and/or other materials provided with the distribution.${line.separator}
+${line.separator}
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS ${line.separator}
+IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED ${line.separator}
+TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A ${line.separator}
+PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR ${line.separator}
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, ${line.separator}
+EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, ${line.separator}
+PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR ${line.separator}
+PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF ${line.separator}
+LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING ${line.separator}
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS ${line.separator}
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.${line.separator}
+===============================================================================${line.separator}
+${line.separator}
+Copyright and license statement for the original Mersenne twister C${line.separator}
+routines translated in MersenneTwister class in package ${line.separator}
+org.apache.commons.math3.random:${line.separator}
+${line.separator}
+   Copyright (C) 1997 - 2002, Makoto Matsumoto and Takuji Nishimura,${line.separator}
+   All rights reserved.                          ${line.separator}
+${line.separator}
+   Redistribution and use in source and binary forms, with or without${line.separator}
+   modification, are permitted provided that the following conditions${line.separator}
+   are met:${line.separator}
+${line.separator}
+	 1. Redistributions of source code must retain the above copyright${line.separator}
+		notice, this list of conditions and the following disclaimer.${line.separator}
+${line.separator}
+	 2. Redistributions in binary form must reproduce the above copyright${line.separator}
+		notice, this list of conditions and the following disclaimer in the${line.separator}
+		documentation and/or other materials provided with the distribution.${line.separator}
+${line.separator}
+	 3. The names of its contributors may not be used to endorse or promote ${line.separator}
+		products derived from this software without specific prior written ${line.separator}
+		permission.${line.separator}
+${line.separator}
+   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS${line.separator}
+   "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT${line.separator}
+   LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR${line.separator}
+   A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR${line.separator}
+   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,${line.separator}
+   EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,${line.separator}
+   PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR${line.separator}
+   PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF${line.separator}
+   LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING${line.separator}
+   NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS${line.separator}
+   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.${line.separator}
+${line.separator}
+===============================================================================${line.separator}
+${line.separator}
+The initial code for shuffling an array (originally in class${line.separator}
+"org.apache.commons.math3.random.RandomDataGenerator", now replaced by${line.separator}
+a method in class "org.apache.commons.math3.util.MathArrays") was${line.separator}
+inspired from the algorithm description provided in${line.separator}
+"Algorithms", by Ian Craw and John Pulham (University of Aberdeen 1999).${line.separator}
+The textbook (containing a proof that the shuffle is uniformly random) is${line.separator}
+available here:${line.separator}
+  http://citeseerx.ist.psu.edu/viewdoc/download;?doi=10.1.1.173.1898&amp;rep=rep1&amp;type=pdf${line.separator}
+${line.separator}
+===============================================================================${line.separator}
+License statement for the direction numbers in the resource files for Sobol sequences.${line.separator}
+${line.separator}
+-----------------------------------------------------------------------------${line.separator}
+Licence pertaining to sobol.cc and the accompanying sets of direction numbers${line.separator}
+${line.separator}
+-----------------------------------------------------------------------------${line.separator}
+Copyright (c) 2008, Frances Y. Kuo and Stephen Joe${line.separator}
+All rights reserved.${line.separator}
+${line.separator}
+Redistribution and use in source and binary forms, with or without${line.separator}
+modification, are permitted provided that the following conditions are met:${line.separator}
+${line.separator}
+	* Redistributions of source code must retain the above copyright${line.separator}
+	  notice, this list of conditions and the following disclaimer.${line.separator}
+${line.separator}
+	* Redistributions in binary form must reproduce the above copyright${line.separator}
+	  notice, this list of conditions and the following disclaimer in the${line.separator}
+	  documentation and/or other materials provided with the distribution.${line.separator}
+${line.separator}
+	* Neither the names of the copyright holders nor the names of the${line.separator}
+	  University of New South Wales and the University of Waikato${line.separator}
+	  and its contributors may be used to endorse or promote products derived${line.separator}
+	  from this software without specific prior written permission.${line.separator}
+${line.separator}
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS ``AS IS'' AND ANY${line.separator}
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED${line.separator}
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE${line.separator}
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS BE LIABLE FOR ANY${line.separator}
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES${line.separator}
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;${line.separator}
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND${line.separator}
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT${line.separator}
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS${line.separator}
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.${line.separator}
+===============================================================================${line.separator}
+${line.separator}
+The initial commit of package "org.apache.commons.math3.ml.neuralnet" is${line.separator}
+an adapted version of code developed in the context of the Data Processing${line.separator}
+and Analysis Consortium (DPAC) of the "Gaia" project of the European Space${line.separator}
+Agency (ESA).${line.separator}
+===============================================================================${line.separator}
+${line.separator}
+The initial commit of the class "org.apache.commons.math3.special.BesselJ" is${line.separator}
+an adapted version of code translated from the netlib Fortran program, rjbesl${line.separator}
+http://www.netlib.org/specfun/rjbesl by R.J. Cody at Argonne National${line.separator}
+Laboratory (USA).  There is no license or copyright statement included with the${line.separator}
+original Fortran sources.${line.separator}
+===============================================================================${line.separator}
+${line.separator}
+${line.separator}
+The BracketFinder (package org.apache.commons.math3.optimization.univariate)${line.separator}
+and PowellOptimizer (package org.apache.commons.math3.optimization.general)${line.separator}
+classes are based on the Python code in module "optimize.py" (version 0.5)${line.separator}
+developed by Travis E. Oliphant for the SciPy library (http://www.scipy.org/)${line.separator}
+Copyright © 2003-2009 SciPy Developers.${line.separator}
+${line.separator}
+SciPy license${line.separator}
+Copyright © 2001, 2002 Enthought, Inc.${line.separator}
+All rights reserved.${line.separator}
+${line.separator}
+Copyright © 2003-2013 SciPy Developers.${line.separator}
+All rights reserved.${line.separator}
+${line.separator}
+Redistribution and use in source and binary forms, with or without${line.separator}
+modification, are permitted provided that the following conditions are met:${line.separator}
+${line.separator}
+	* Redistributions of source code must retain the above copyright${line.separator}
+	  notice, this list of conditions and the following disclaimer.${line.separator}
+${line.separator}
+	* Redistributions in binary form must reproduce the above copyright${line.separator}
+	  notice, this list of conditions and the following disclaimer in the${line.separator}
+	  documentation and/or other materials provided with the distribution.${line.separator}
+${line.separator}
+	* Neither the name of Enthought nor the names of the SciPy Developers may${line.separator}
+	  be used to endorse or promote products derived from this software without${line.separator}
+	  specific prior written permission.${line.separator}
+${line.separator}
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY${line.separator}
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED${line.separator}
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE${line.separator}
+DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY${line.separator}
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES${line.separator}
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;${line.separator}
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND${line.separator}
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT${line.separator}
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS${line.separator}
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.${line.separator}
+===============================================================================</license.additions.apache.commons.math3>
+	</properties>
+
+	<name>Modules</name>
+        <build>
+        <plugins>
+            <plugin>
+                <groupId>org.reficio</groupId>
+                <artifactId>p2-maven-plugin</artifactId>
+                <version>1.3.0</version>
+                <executions>
+                    <execution>
+                        <id>default-cli</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>site</goal>
+						</goals>
+                        <configuration>							
+							<featureDefinitions>
+								<feature>
+									<id>org.apache.commons.math3.feature</id>
+									<version>${org.apache.commons_commons-math3.version}</version>
+									<label>Apache Commons Math</label>
+									<providerName>${project.groupId}</providerName>
+									<description>${project.description}</description>
+									<copyright>
+Apache Commons Math
+Copyright 2001-2016 The Apache Software Foundation
+
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).
+
+This product includes software developed for Orekit by
+CS Systèmes d'Information (http://www.c-s.fr/)
+Copyright 2010-2012 CS Systèmes d'Information
+									</copyright>
+									<license>${license.apache20}${license.additions.apache.commons.math3}</license>
+									<generateSourceFeature>true</generateSourceFeature>
+									<artifacts>
+										<artifact>
+											<id>org.apache.commons:commons-math3:${org.apache.commons_commons-math3.version}</id>
+											<transitive>true</transitive>
+											<source>true</source>
+										</artifact>
+									</artifacts>									
+								</feature>								
+							</featureDefinitions>									
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

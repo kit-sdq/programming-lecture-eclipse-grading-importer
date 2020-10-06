@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/edu.kit.ipd.sdq.praktomat.feature_1.0.0.qualifier.jar" id="edu.kit.ipd.sdq.praktomat.feature" version="1.0.0.qualifier">
+      <category name="edu.kit.praktomat"/>
+   </feature>
+   <category-def name="edu.kit.praktomat" label="Praktomat"/>
+</site>

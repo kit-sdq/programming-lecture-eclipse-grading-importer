@@ -3,18 +3,79 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>root</artifactId>
+	<groupId>edu.kit.praktomat</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<parent>
-		<groupId>edu.kit.praktomat</groupId>
-		<artifactId>releng</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>releng</relativePath>
-	</parent>
-
 	<modules>
-		<module>plugin</module>
-		<module>releng-updatesite</module>
+		<module>bundles</module>
+		<module>features</module>
+		<module>releng</module>
 	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>11</java.version>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<tycho.version>1.7.0</tycho.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<main.basedir>${project.basedir}</main.basedir>
+		
+
+
+
+		<org.apache.commons_commons-math3.version>3.6.1</org.apache.commons_commons-math3.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>eclipse-release</id>
+			<url>http://download.eclipse.org/releases/latest/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>own-release</id>
+			<url>file://${maven.multiModuleProjectDirectory}/bundles/edu.kit.sdq.praktomat.thirdparty/target/repository</url>
+			<layout>p2</layout>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+		<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<pomDependencies>consider</pomDependencies>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
